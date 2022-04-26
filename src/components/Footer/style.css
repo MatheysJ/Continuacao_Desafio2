@@ -1,0 +1,7 @@
+.Rodape {
+    background-color: gray;
+    justify-content: center;
+    height: 200px;
+    display: flex;
+    color: aliceblue;
+}
