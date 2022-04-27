@@ -14,7 +14,7 @@ import { Buscar } from "../../API";
 
 function Home() {
   const [usuario, setUsuario] = useState("");
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //Deixou se ser useHisory ;-;
 
   return (
     <div>
@@ -53,10 +53,10 @@ function Home() {
             type="submit"
             variant="contained"
             color="inherit"
-            onClick={() =>
-              /* Buscar(usuario) */
+            onClick={() => {
+              Buscar(usuario)
               navigate("/detalhes-usuario")
-            }
+            }}
           >
             Pesquisar
           </Button>
