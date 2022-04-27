@@ -1,4 +1,5 @@
 import React from 'react';
+import { Buscar } from '../API';
 
 function Detalhes() {
     return(
