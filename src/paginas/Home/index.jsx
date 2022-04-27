@@ -10,6 +10,7 @@ import "./style.css";
 import { useNavigate } from "react-router-dom";
 import "@fontsource/roboto/500.css";
 import SearchIcon from "@mui/icons-material/Search";
+import { Buscar } from "../../API";
 
 function Home() {
   const [usuario, setUsuario] = useState("");
@@ -17,11 +18,14 @@ function Home() {
 
   return (
     <div>
-      <Typography variant="h2" align="center">
-        Home
-      </Typography>
+      <Typography variant="h3" align="center" className="titulo">Pesquise um usuário do GitHub</Typography>
 
-      <form>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+        }}
+      >
+
         <div className="container">
           <TextField
             value={usuario}
@@ -43,13 +47,11 @@ function Home() {
               ),
             }}
           />
-
-          <Button
-            type="submit"
-            variant="contained"
-            color="inherit"
-            onClick={() => navigate("/detalhes-usuario")}
-          >
+          
+          <Button type="submit" variant="contained" color="inherit" onClick={() => 
+            Buscar(usuario)
+            /* navigate("/detalhes-usuario") */
+            }>
             Pesquisar
           </Button>
         </div>

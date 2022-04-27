@@ -4,7 +4,8 @@ import './style.css'
 function Footer(){
     return(
         <div className='Rodape'>
-            <h2>Rodapé</h2>
+            <h2>Utilizando a API do GitHub</h2>
+            <h3>REST API</h3>
         </div>
     );
 }
