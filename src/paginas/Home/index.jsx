@@ -1,20 +1,51 @@
-import React from "react";
-import { Container, FormControl, TextField } from "@mui/material";
-import { Main } from "./style";
+import React, { useState } from "react";
+import { Button, IconButton, InputAdornment, TextField, Typography } from "@mui/material";
+import "./style.css";
+import '@fontsource/roboto/500.css';
+import SearchIcon from '@mui/icons-material/Search';
 
-function Home() {
+function Home(onSubmit) {
+  const [usuario, setUsuario] = useState("");
+
   return (
-    <Main>
-      <h1>Home</h1>
-      <FormControl>
-        <TextField
+    <div>
+      <Typography variant="h2" align="center">Home</Typography>
+
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          onSubmit({ usuario });
+        }}
+      >
+        <div className="container">
+          <TextField
+            value={usuario}
+            onChange={(event) => {
+              setUsuario(event.target.value);
+              console.log(usuario);
+            }}
             id="standard-basic"
             label="Pesquise um usuário"
             variant="outlined"
             margin="none"
-        />
-      </FormControl>
-    </Main>
+            className="search"
+
+            InputProps={{endAdornment: (
+              <InputAdornment position="end">
+                <IconButton>
+                  <SearchIcon />
+                </IconButton>
+              </InputAdornment>
+            )}}
+            
+          />
+          
+          <Button type="submit" variant="contained" color="inherit">
+            Pesquisar
+          </Button>
+        </div>
+      </form>
+    </div>
   );
 }
 

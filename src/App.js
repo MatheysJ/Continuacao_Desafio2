@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Switch,
 } from "react-router-dom";
 import Home from "./paginas/Home/index";
 import RepositoriosFav from "./paginas/RepositoriosFav";
