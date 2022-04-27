@@ -18,14 +18,15 @@ function Home() {
 
   return (
     <div>
-      <Typography variant="h3" align="center" className="titulo">Pesquise um usuário do GitHub</Typography>
+      <Typography variant="h3" align="center" className="titulo">
+        Pesquise um usuário do GitHub
+      </Typography>
 
       <form
         onSubmit={(event) => {
           event.preventDefault();
         }}
       >
-
         <div className="container">
           <TextField
             value={usuario}
@@ -40,18 +41,23 @@ function Home() {
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <IconButton>
+                  <IconButton onClick={() => Buscar(usuario)}>
                     <SearchIcon />
                   </IconButton>
                 </InputAdornment>
               ),
             }}
           />
-          
-          <Button type="submit" variant="contained" color="inherit" onClick={() => 
-            Buscar(usuario)
-            /* navigate("/detalhes-usuario") */
-            }>
+
+          <Button
+            type="submit"
+            variant="contained"
+            color="inherit"
+            onClick={() =>
+              /* Buscar(usuario) */
+              navigate("/detalhes-usuario")
+            }
+          >
             Pesquisar
           </Button>
         </div>
