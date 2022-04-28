@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Button,
   IconButton,
@@ -11,9 +11,12 @@ import { useNavigate } from "react-router-dom";
 import "@fontsource/roboto/500.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { Buscar } from "../../API";
+import { UsuarioContext } from "../../components/common/context/Usuario";
+import { DadosContext } from "../../components/common/context/Dados";
 
 function Home() {
-  const [usuario, setUsuario] = useState("");
+  const { usuario, setUsuario } = useContext(UsuarioContext);
+  const { dados, setDados } = useContext(DadosContext);
   const navigate = useNavigate(); //Deixou se ser useHisory ;-;
 
   return (
@@ -41,7 +44,10 @@ function Home() {
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <IconButton onClick={() => Buscar(usuario)}>
+                  <IconButton onClick={() => {
+                    Buscar(usuario, setDados)
+                    console.log(dados)
+                    }}>
                     <SearchIcon />
                   </IconButton>
                 </InputAdornment>
@@ -54,7 +60,6 @@ function Home() {
             variant="contained"
             color="inherit"
             onClick={() => {
-              Buscar(usuario)
               navigate("/detalhes-usuario")
             }}
           >

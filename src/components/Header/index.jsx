@@ -1,5 +1,5 @@
 import { TextField, IconButton, InputAdornment } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./style.css";
 
 import "@fontsource/roboto/500.css";
@@ -8,9 +8,12 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Buscar } from "../../API";
 
 import { useLocation, Link } from "react-router-dom";
+import { UsuarioContext } from "../common/context/Usuario";
+import { DadosContext } from "../common/context/Dados";
 
 function HeaderPesquisa() {
-  const [usuario, setUsuario] = useState("");
+  const { usuario, setUsuario } = useContext(UsuarioContext);
+  const { dados, setDados } = useContext(DadosContext);
   const location = useLocation();
 
   return (
@@ -36,7 +39,7 @@ function HeaderPesquisa() {
             <InputAdornment position="end">
               <IconButton
                 onClick={() => {
-                  Buscar(usuario);
+                  Buscar(usuario, setDados);
                   console.log(location.pathname);
                 }}
               >

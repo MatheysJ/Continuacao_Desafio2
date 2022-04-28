@@ -1,15 +1,11 @@
 import Axios from "axios";
-
+/* 
 export function Buscar(nome){
     Axios
-        /* 
-        Lembrar de tratar os dados passados nesse input antes de enviar a requisição pra API de preferência, Regex, 
-        validação de formulário
-        */
         
         .get(`https://api.github.com/users/${nome}`)
         .then((res) => {
-            console.log(res.data);
+            const objetoUsuario = res.data;
         })
 }
 
@@ -19,4 +15,14 @@ export function BuscarRepos(nome){
         .then((repos) => {
             console.log(repos.data);
         })
+}
+ */
+
+export const api = Axios.create({
+    baseURL: 'http://localhost:3000'
+})
+
+export const Buscar = async(usuario, setDado) => {
+    const resposta = await api.get(`https://api.github.com/users/${usuario}`)
+    setDado(resposta.data)
 }

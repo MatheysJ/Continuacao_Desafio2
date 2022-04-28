@@ -1,14 +1,12 @@
 import { HeaderLocation } from "./components/Header";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./paginas/Home/index";
 import RepositoriosFav from "./paginas/RepositoriosFav/RepositoriosFav";
 import Detalhes from "./paginas/Detalhes/Detalhes";
 import Footer from "./components/Footer";
 import Pagina404 from "./paginas/Pagina404";
+import { useState } from "react";
+import { UsuarioProvider } from "./components/common/context/Usuario";
 
 function App() {
   return (
@@ -17,23 +15,21 @@ function App() {
       Parece que o Switch foi trocado por Routes, agora o elemento do Route fica como Prop dele, e o Routes não aceita nada além
     de Route como "filho". Pra setar uma página 404 agora tem que usar path="*". 
     */
-    <Router>
+      <Router>
+        <HeaderLocation />
 
-      <HeaderLocation />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
 
-      <Routes>
-        <Route exact path="/" element={<Home />} />
+          <Route path="/detalhes-usuario" element={<Detalhes />} />
 
-        <Route path="/detalhes-usuario" element={<Detalhes />} />
+          <Route path="/repositorios-favoritos" element={<RepositoriosFav />} />
 
-        <Route path="/repositorios-favoritos" element={<RepositoriosFav />} />
+          <Route path="*" element={<Pagina404 />} />
+        </Routes>
 
-        <Route path="*" element={<Pagina404 />} />
-      </Routes>
-
-      <Footer />
-      
-    </Router>
+        <Footer />
+      </Router>
   );
 }
 
