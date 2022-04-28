@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Buscar } from "../../API";
 import { UsuarioContext } from "../../components/common/context/Usuario";
 import { DadosContext } from "../../components/common/context/Dados";
+import Infos from "../../components/Infos";
 
 function Detalhes() {
   const { usuario } = useContext(UsuarioContext);
@@ -21,17 +22,9 @@ function Detalhes() {
         Detalhes
       </Typography>
 
-      <ul>
-        <li>login: {dados.login}</li>
-        <li>Nome: {dados.name}</li>
-        <li>id: {dados.id}</li>
-        <li>Seguidores: {dados.followers}</li>
-        <li>Seguindo: {dados.following}</li>
-        <li>Bio: {dados.bio}</li>
-        <li>link: {dados.html_url}</li>
-      </ul>
+        <Infos dados={ dados } />
 
-      <div className="container">
+      <div className="detalhes__container">
         <Link to="/repositorios-favoritos">
           <Typography variant="h5" align="center" className="botao">
             Repositórios favoritos

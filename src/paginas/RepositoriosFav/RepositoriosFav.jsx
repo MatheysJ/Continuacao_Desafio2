@@ -6,11 +6,11 @@ import './style.css'
 
 function RepositoriosFav() {
     return (
-        <div className='bloco'>
+        <div className='reps_fav__bloco'>
             
-            <Typography variant="h3" align="center" className="titulo">Repositórios Favoritos</Typography>
+            <Typography variant="h3" align="center" className="reps_fav__titulo">Repositórios Favoritos</Typography>
             
-            <div className='container'>
+            <div className='reps_fav__container'>
                 <Typography variant="h5" align="center">Estes são os repositórios favoritos do usuário</Typography>
             </div>
 

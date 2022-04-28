@@ -3,27 +3,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(28, 3, 68);
 }
 
 .titulo{
     margin: 50px 0 20px;
+    color: #FFF;
 }
 
-.container{
+.detalhes__container{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     width: 80%;
-    height: 400px;
+    height: 100px;
     margin: 10px 0 10px;
 }
 
 .botao {
     padding: 10px;
-    background-color: blueviolet;
+    background-color: rgba(78, 8, 206, 0.91);;
     color: aliceblue;
-    border: 50px;
-    border-color: gray;
+    border: 2px solid rgba(245, 40, 145, 0.8);
     border-radius: 10px;
 }

@@ -1,0 +1,33 @@
+.layout_detalhes {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin: 30px 10px 20px 10px;
+}
+
+li {
+    font-weight: 200;
+}
+
+li span {
+    font-weight: 500;
+}
+
+.lista_detalhes {
+    padding: 25px;
+    list-style-type: none;
+    background-color: rgba(78, 8, 206, 0.91);
+    border: 2px solid rgba(245, 40, 145, 0.8);
+    border-radius: 10px;
+    color: #FFF;
+}
+
+.imagem_detalhes_box {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+}
+
+.imagem_detalhes {
+    border: 2px solid rgba(245, 40, 145, 0.8);
+}

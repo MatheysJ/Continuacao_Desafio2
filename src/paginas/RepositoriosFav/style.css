@@ -1,20 +1,20 @@
-.bloco {
+.reps_fav__bloco {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.titulo{
-    margin: 25px 0 20px;
+.reps_fav__titulo{
+    margin: 25px 0 20px!important;
 }
 
-.container{
+.reps_fav__container{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     width: 80%;
-    height: 400px;
+    height: 200px;
     margin: 10px 0 10px;
 }
