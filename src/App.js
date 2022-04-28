@@ -1,12 +1,12 @@
-import Header from "./components/Header";
+import { HeaderLocation } from "./components/Header";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
 } from "react-router-dom";
 import Home from "./paginas/Home/index";
-import RepositoriosFav from "./paginas/RepositoriosFav";
-import Detalhes from "./paginas/Detalhes";
+import RepositoriosFav from "./paginas/RepositoriosFav/RepositoriosFav";
+import Detalhes from "./paginas/Detalhes/Detalhes";
 import Footer from "./components/Footer";
 import Pagina404 from "./paginas/Pagina404";
 
@@ -19,7 +19,7 @@ function App() {
     */
     <Router>
 
-      <Header />
+      <HeaderLocation />
 
       <Routes>
         <Route exact path="/" element={<Home />} />
