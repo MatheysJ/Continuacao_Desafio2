@@ -24,6 +24,11 @@ export const api = Axios.create({
 
 export const Buscar = async(usuario, setDado) => {
     const resposta = await api.get(`https://api.github.com/users/${usuario}`)
+    /* .catch(funtion (error) {
+        if (error.response) {
+            console.log(error.reponse.data)
+        }
+    }) */
     setDado(resposta.data)
 }
 
