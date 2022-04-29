@@ -26,3 +26,8 @@ export const Buscar = async(usuario, setDado) => {
     const resposta = await api.get(`https://api.github.com/users/${usuario}`)
     setDado(resposta.data)
 }
+
+export const BuscarRepos = async(usuario, setDado) => {
+    const resposta_repos = await api.get(`https://api.github.com/users/${usuario}/repos`)
+    setDado(resposta_repos.data)
+}

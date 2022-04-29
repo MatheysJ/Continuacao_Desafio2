@@ -40,7 +40,6 @@ function HeaderPesquisa() {
               <IconButton
                 onClick={() => {
                   Buscar(usuario, setDados);
-                  console.log(location.pathname);
                 }}
               >
                 <SearchIcon />
