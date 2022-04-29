@@ -4,6 +4,7 @@ import { Button, Typography } from '@mui/material';
 import './style.css'
 import { ReposContext } from '../../components/common/context/Repos';
 import { UsuarioContext } from '../../components/common/context/Usuario';
+import { DadosContext } from "../../components/common/context/Dados";
 import Repositorio from '../../components/Repositorio';
 /* import { Link } from "react-router-dom"; */
 
@@ -11,10 +12,10 @@ function RepositoriosFav() {
 
     const { repos, setRepos } = useContext(ReposContext);
     const { usuario } = useContext(UsuarioContext);
+    const { dados, setDados } = useContext(DadosContext);
 
     useEffect(() => {
         BuscarRepos(usuario, setRepos);
-        console.log(repos)
       }, []);
 
     return (

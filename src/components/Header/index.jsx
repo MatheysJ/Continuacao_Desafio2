@@ -5,14 +5,16 @@ import "./style.css";
 import "@fontsource/roboto/500.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-import { Buscar } from "../../API";
+import { Buscar, BuscarRepos } from "../../API";
 
 import { useLocation, Link } from "react-router-dom";
 import { UsuarioContext } from "../common/context/Usuario";
 import { DadosContext } from "../common/context/Dados";
+import { ReposContext } from "../common/context/Repos";
 
 function HeaderPesquisa() {
   const { usuario, setUsuario } = useContext(UsuarioContext);
+  const { repos, setRepos } = useContext(ReposContext);
   const { dados, setDados } = useContext(DadosContext);
   const location = useLocation();
 
@@ -40,6 +42,7 @@ function HeaderPesquisa() {
               <IconButton
                 onClick={() => {
                   Buscar(usuario, setDados);
+                  BuscarRepos(usuario, setRepos);
                 }}
               >
                 <SearchIcon />

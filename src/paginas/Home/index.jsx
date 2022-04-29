@@ -46,7 +46,7 @@ function Home() {
                 <InputAdornment position="end">
                   <IconButton onClick={() => {
                     Buscar(usuario, setDados)
-                    console.log(dados)
+                    navigate("/detalhes-usuario")
                     }}>
                     <SearchIcon />
                   </IconButton>
@@ -60,6 +60,7 @@ function Home() {
             variant="contained"
             color="inherit"
             onClick={() => {
+              Buscar(usuario, setDados)
               navigate("/detalhes-usuario")
             }}
           >
