@@ -25,9 +25,12 @@ function Home() {
         Pesquise um usuário do GitHub
       </Typography>
 
-      <form
+      <form 
+        className="form_home"
         onSubmit={(event) => {
           event.preventDefault();
+          Buscar(usuario, setDados)
+          navigate("/detalhes-usuario")
         }}
       >
         <div className="container">

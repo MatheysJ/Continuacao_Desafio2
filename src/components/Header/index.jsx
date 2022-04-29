@@ -1,5 +1,5 @@
 import { TextField, IconButton, InputAdornment } from "@mui/material";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./style.css";
 
 import "@fontsource/roboto/500.css";
@@ -14,9 +14,18 @@ import { ReposContext } from "../common/context/Repos";
 
 function HeaderPesquisa() {
   const { usuario, setUsuario } = useContext(UsuarioContext);
-  const { repos, setRepos } = useContext(ReposContext);
-  const { dados, setDados } = useContext(DadosContext);
-  const location = useLocation();
+  const { setRepos } = useContext(ReposContext);
+  const { setDados } = useContext(DadosContext);
+
+  /* Esse useEffect serve para que seja realizada uma busca quando o usuário digitar na barra de pesquisa do header e parar por 2
+  segundos, com isso, o useEffect executa a busca e define Dados e Repositórios sem a necessidade de clicar no botão */ 
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      Buscar(usuario, setDados);
+      BuscarRepos(usuario, setRepos);
+    }, 2000)
+    return () => clearTimeout(delay)
+  }, [usuario])
 
   return (
     <nav>
@@ -24,33 +33,39 @@ function HeaderPesquisa() {
         <h1>Desafio 2</h1>
       </Link>
 
-      {/* Isso só deve ser exibido na 2° e 3° página. */}
+      <form className="form_header" onSubmit={(event) => {
+        event.preventDefault();
+        Buscar(usuario, setDados);
+        BuscarRepos(usuario, setRepos);
+      }}>
 
-      <TextField
-        value={usuario}
-        onChange={(event) => {
-          setUsuario(event.target.value);
-        }}
-        id="standard-basic"
-        label="Pesquise um usuário"
-        variant="outlined"
-        margin="none"
-        className="search"
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton
-                onClick={() => {
-                  Buscar(usuario, setDados);
-                  BuscarRepos(usuario, setRepos);
-                }}
-              >
-                <SearchIcon />
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-      />
+        <TextField
+          value={usuario}
+          onChange={(event) => {
+            setUsuario(event.target.value);
+          }}
+          id="standard-basic"
+          label="Pesquise um usuário"
+          variant="outlined"
+          margin="none"
+          className="search_header"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  onClick={() => {
+                    Buscar(usuario, setDados);
+                    BuscarRepos(usuario, setRepos);
+                  }}
+                >
+                  <SearchIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+
+      </form>
 
       <h1>React APIs</h1>
     </nav>
