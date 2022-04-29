@@ -4,8 +4,8 @@ import { Typography } from "@mui/material";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { Buscar } from "../../API";
-import { UsuarioContext } from "../../components/common/context/Usuario";
-import { DadosContext } from "../../components/common/context/Dados";
+import { UsuarioContext } from "../../common/context/Usuario";
+import { DadosContext } from "../../common/context/Dados";
 import Infos from "../../components/Infos";
 
 function Detalhes() {

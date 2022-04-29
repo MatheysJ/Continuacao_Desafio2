@@ -2,9 +2,9 @@ import React, { useContext, useEffect } from 'react';
 import { Buscar, BuscarRepos } from '../../API';
 import { Button, Typography } from '@mui/material';
 import './style.css'
-import { ReposContext } from '../../components/common/context/Repos';
-import { UsuarioContext } from '../../components/common/context/Usuario';
-import { DadosContext } from "../../components/common/context/Dados";
+import { ReposContext } from '../../common/context/Repos';
+import { UsuarioContext } from '../../common/context/Usuario';
+import { DadosContext } from "../../common/context/Dados";
 import Repositorio from '../../components/Repositorio';
 /* import { Link } from "react-router-dom"; */
 

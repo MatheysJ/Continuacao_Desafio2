@@ -5,8 +5,6 @@ import RepositoriosFav from "./paginas/RepositoriosFav/RepositoriosFav";
 import Detalhes from "./paginas/Detalhes/Detalhes";
 import Footer from "./components/Footer";
 import Pagina404 from "./paginas/Pagina404";
-import { useState } from "react";
-import { UsuarioProvider } from "./components/common/context/Usuario";
 
 function App() {
   return (

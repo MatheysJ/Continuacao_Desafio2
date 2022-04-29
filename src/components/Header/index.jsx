@@ -8,9 +8,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Buscar, BuscarRepos } from "../../API";
 
 import { useLocation, Link } from "react-router-dom";
-import { UsuarioContext } from "../common/context/Usuario";
-import { DadosContext } from "../common/context/Dados";
-import { ReposContext } from "../common/context/Repos";
+import { UsuarioContext } from "../../common/context/Usuario";
+import { DadosContext } from "../../common/context/Dados";
+import { ReposContext } from "../../common/context/Repos";
 
 function HeaderPesquisa() {
   const { usuario, setUsuario } = useContext(UsuarioContext);
@@ -40,6 +40,7 @@ function HeaderPesquisa() {
       }}>
 
         <TextField
+          color="secondary"
           value={usuario}
           onChange={(event) => {
             setUsuario(event.target.value);

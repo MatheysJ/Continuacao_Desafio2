@@ -11,8 +11,8 @@ import { useNavigate } from "react-router-dom";
 import "@fontsource/roboto/500.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { Buscar } from "../../API";
-import { UsuarioContext } from "../../components/common/context/Usuario";
-import { DadosContext } from "../../components/common/context/Dados";
+import { UsuarioContext } from "../../common/context/Usuario";
+import { DadosContext } from "../../common/context/Dados";
 
 function Home() {
   const { usuario, setUsuario } = useContext(UsuarioContext);
