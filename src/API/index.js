@@ -1,38 +1,39 @@
 import Axios from "axios";
-/* 
-export function Buscar(nome){
-    Axios
-        
-        .get(`https://api.github.com/users/${nome}`)
-        .then((res) => {
-            const objetoUsuario = res.data;
-        })
-}
-
-export function BuscarRepos(nome){
-    Axios
-        .get(`https://api.github.com/users/${nome}/repos`)
-        .then((repos) => {
-            console.log(repos.data);
-        })
-}
- */
 
 export const api = Axios.create({
     baseURL: 'http://localhost:3000'
 })
 
 export const Buscar = async(usuario, setDado) => {
-    const resposta = await api.get(`https://api.github.com/users/${usuario}`)
-    /* .catch(funtion (error) {
-        if (error.response) {
-            console.log(error.reponse.data)
-        }
-    }) */
-    setDado(resposta.data)
+    await api
+        .get(`https://api.github.com/users/${usuario}`, {
+            headers: {
+                'Authorization' : `token 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`
+            }
+        })
+        .then(response => {
+            setDado(response.data)
+        })
+        .catch(err => {
+            /* console.log(`Esse é o erro que deu: ${err}`)
+            console.log(`Esse é para ser o código de erro: ${err.response.status}`) */
+        })
 }
 
 export const BuscarRepos = async(usuario, setDado) => {
-    const resposta_repos = await api.get(`https://api.github.com/users/${usuario}/repos`)
-    setDado(resposta_repos.data)
+    await api.get(`https://api.github.com/users/${usuario}/repos`, {
+        headers: {
+            'Authorization' : `token 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`
+        }
+    })
+    .then(response => {
+        setDado(response.data)
+    })
+    .catch(err => {
+        /* console.log(`Esse é o erro que deu: ${err}`)
+        console.log(`Esse é para ser o código de erro: ${err.response.status}`) */
+    })
 }
+
+//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
+//Token, ele só vai funcionar por 90 dias, a partir do dia 01/05/2022
