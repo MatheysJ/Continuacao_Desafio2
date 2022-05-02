@@ -1,19 +1,21 @@
 import { TextField, IconButton, InputAdornment } from "@mui/material";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./style.css";
 
 import "@fontsource/roboto/500.css";
 import SearchIcon from "@mui/icons-material/Search";
 
-import { Buscar, BuscarRepos } from "../../API";
+import { Buscar, BuscarRepos, BuscarReposFav } from "../../API";
 
 import { useLocation, Link } from "react-router-dom";
 import { UsuarioContext } from "../../common/context/Usuario";
 import { DadosContext } from "../../common/context/Dados";
 import { ReposContext } from "../../common/context/Repos";
+import { ReposFavContext } from "../../common/context/ReposFav";
 
 function HeaderPesquisa() {
   const { usuario, setUsuario } = useContext(UsuarioContext);
+  const { reposFav, setReposFav } = useContext(ReposFavContext);
   const { setRepos } = useContext(ReposContext);
   const { setDados } = useContext(DadosContext);
 
@@ -37,6 +39,7 @@ function HeaderPesquisa() {
         event.preventDefault();
         Buscar(usuario, setDados);
         BuscarRepos(usuario, setRepos);
+        BuscarReposFav(usuario, setReposFav)
       }}>
 
         <TextField
@@ -57,6 +60,7 @@ function HeaderPesquisa() {
                   onClick={() => {
                     Buscar(usuario, setDados);
                     BuscarRepos(usuario, setRepos);
+                    BuscarReposFav(usuario, setReposFav)
                   }}
                 >
                   <SearchIcon />
