@@ -62,7 +62,7 @@ function Home() {
           <Button
             type="submit"
             variant="contained"
-            color="inherit"
+            color="primary"
             onClick={() => {
               Buscar(usuario, setDados)
               navigate("/detalhes-usuario")

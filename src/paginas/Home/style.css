@@ -1,5 +1,6 @@
 .titulo{
     margin-top: 50px;
+    color: black!important;
 }
 
 .container{
@@ -8,7 +9,7 @@
     align-items: center;
     flex-direction: column;
     width: 80%;
-    height: 400px;
+    height: 340px;
     margin: 10px 0 10px;
 }
 
