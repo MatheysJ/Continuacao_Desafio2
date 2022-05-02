@@ -41,6 +41,7 @@ function Home() {
             }}
             id="standard-basic"
             label="Pesquise um usuário"
+            color="secondary"
             variant="outlined"
             margin="none"
             className="search"
