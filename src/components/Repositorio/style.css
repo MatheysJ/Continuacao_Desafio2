@@ -1,3 +1,49 @@
-.itens_repositorio {
-    list-style: none;
+.bloco_repositorio {
+    width: 100%;
+    margin: 0 0 15px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
+
+.li_repositorio{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 1em;
+}
+
+.lista_repositorio {
+    margin: 0 0 0 0;
+    padding: 0.75em;
+    border: 2px solid ;
+    border-bottom: 0;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dados_lista_repositorio {
+    margin: 0 0 0 0;
+    padding: 0.75em;
+    border: 2px solid ;
+    border-top: 0;
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nome_repositorio {
+    font-weight: 500;
+    font-variant-caps: all-small-caps;
+}
+
+.avatar_repositorio {
+    border: 1px solid rgb(12, 3, 28);
+}
+
