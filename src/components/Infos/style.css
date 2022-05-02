@@ -5,11 +5,11 @@
     margin: 30px 10px 20px 10px;
 }
 
-li {
+.lista_detalhes li {
     font-weight: 200;
 }
 
-li span {
+.lista_detalhes li span {
     font-weight: 500;
 }
 

@@ -25,10 +25,6 @@ function RepositoriosFav() {
             
             <Typography variant="h3" align="center" className="reps_fav__titulo">Repositórios Favoritos</Typography>
             
-            <div className='reps_fav__container'>
-                <Typography variant="h5" align="center">Estes são os repositórios favoritos do usuário</Typography>
-            </div>
-            
             <Repositorio repos={ Array.from(reposFav) } />
 
         </div>

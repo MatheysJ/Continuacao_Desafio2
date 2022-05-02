@@ -35,6 +35,7 @@ function Home() {
       >
         <div className="container">
           <TextField
+            required
             value={usuario}
             onChange={(event) => {
               setUsuario(event.target.value);
