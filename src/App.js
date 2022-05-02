@@ -18,11 +18,8 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<Home />} />
-
           <Route path="/detalhes-usuario" element={<Detalhes />} />
-
           <Route path="/repositorios-favoritos" element={<RepositoriosFav />} />
-
           <Route path="*" element={<Pagina404 />} />
         </Routes>
 

@@ -23,6 +23,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .item_repositorio{
@@ -34,7 +36,7 @@
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    margin: 0 0 1em;
+    margin: 1em 0 0em;
     border: 2px solid rgb(12, 3, 28);
     border-radius: 0.5em;
     padding: 0 15px 0 15px;
@@ -55,21 +57,25 @@
     flex-wrap: nowrap;
 }
 
-.item_repositorio_nome{
+.divisor_item_repositorio_start {
     width: 100%;
     display: flex;
     justify-content: start;
+}
+.divisor_item_repositorio_center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.divisor_item_repositorio_end{
+    width: 100%;
+    display: flex;
+    justify-content: end;
 }
 
 .nome_repositorio {
     font-weight: 500;
     padding: 0 2px 0 2px;
-}
-
-.item_repositorio_owner{
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 .owner_repositorio{
@@ -79,12 +85,6 @@
 
 .owner_repositorio:hover{
     font-weight: 500;
-}
-
-.item_repositorio_avatar{
-    width: 100%;
-    display: flex;
-    justify-content: end;
 }
 
 .avatar_repositorio {
@@ -131,3 +131,11 @@
     margin-top: 20px;
     align-self: center;
 }
+
+/* .down_arrow {
+    padding: 1px 15px 1px 15px;
+    transition: transform 250ms;
+}
+.down_arrow:hover {
+    transform: translateY(8px);
+} */

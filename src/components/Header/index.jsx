@@ -49,7 +49,6 @@ function HeaderPesquisa() {
             setUsuario(event.target.value);
           }}
           id="standard-basic"
-          label="Pesquise um usuário"
           variant="outlined"
           margin="none"
           className="search_header"

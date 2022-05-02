@@ -14,6 +14,7 @@ function Detalhes() {
 
   useEffect(() => {
     Buscar(usuario, setDados);
+    window.scrollTo(0, 0)
   }, []);
 
   return (
