@@ -15,7 +15,7 @@ nav {
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    background-color: rgb(12, 2, 29);
+    background-color: rgb(12, 2, 29);    
 }
 
 .search_header{
@@ -25,4 +25,16 @@ nav {
 
 .form_header{
     width: 50%;
+}
+
+.barrinha_nav {
+    padding-bottom:8px;
+    background:
+    linear-gradient(
+      to bottom, 
+      rgb(12, 2, 29) 50%,
+      rgb(255, 255, 255)
+    )
+    no-repeat; 
+    background-size:100% 8px;
 }

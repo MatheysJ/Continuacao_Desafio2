@@ -15,6 +15,8 @@ export const Buscar = async(usuario, setDado) => {
             setDado(response.data)
         })
         .catch(err => {
+            setDado('Inválido')
+            console.log('Inválido')
             /* console.log(`Esse é o erro que deu: ${err}`)
             console.log(`Esse é para ser o código de erro: ${err.response.status}`) */
         })
@@ -30,7 +32,10 @@ export const BuscarRepos = async(usuario, setDado) => {
         setDado(response.data)
     })
     .catch(err => {
-        /* console.log(`Esse é o erro que deu: ${err}`)
+        setDado('Inválido')
+        console.log('Inválido')
+        /* console.log('teste')
+        console.log(`Esse é o erro que deu: ${err}`)
         console.log(`Esse é para ser o código de erro: ${err.response.status}`) */
     })
 }

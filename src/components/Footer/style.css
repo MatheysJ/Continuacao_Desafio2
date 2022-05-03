@@ -8,3 +8,15 @@
     align-items: center;
     padding: 10px;
 }
+
+.barrinha_footer{
+        padding-top: 5px;
+        background:
+        linear-gradient(
+          to top,           
+          rgb(12, 2, 29) 50%,
+          rgb(255, 255, 255)
+        )
+        no-repeat; 
+        background-size:100% 6px;
+}

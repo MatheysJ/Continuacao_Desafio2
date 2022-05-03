@@ -1,6 +1,22 @@
-.container_info_user{
+.shrug {
+    transform: scale(2);
+    border: 2px solid rgb(12, 2, 29);
+    border-radius: 50%;
+}
+
+.display_info_user {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 28%;
+}
+
+.button_box {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.box_avatar {
+    margin: 0 0 15px;
 }

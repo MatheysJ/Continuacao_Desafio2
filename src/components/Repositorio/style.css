@@ -60,7 +60,7 @@
 .divisor_item_repositorio_start {
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
 }
 .divisor_item_repositorio_center{
     width: 100%;
@@ -70,7 +70,7 @@
 .divisor_item_repositorio_end{
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .nome_repositorio {

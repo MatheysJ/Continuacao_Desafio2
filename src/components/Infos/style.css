@@ -1,7 +1,7 @@
 .layout_detalhes {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     margin: 30px 10px 20px 10px;
 }
 
