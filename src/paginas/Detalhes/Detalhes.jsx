@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 /* import { Buscar } from '../../API'; */
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { Buscar, BuscarRepos } from "../../API";
@@ -28,11 +28,12 @@ function Detalhes() {
 
       <div className="detalhes__container">
         <Link to="/repositorios-favoritos">
-          <Typography variant="h5" align="center" className="botao">
-            Repositórios favoritos
-          </Typography>
+        <Button variant="contained" color="secondary" size="large">
+          Repositórios favoritos
+        </Button>
         </Link>
       </div>
+
     </div>
   );
 }

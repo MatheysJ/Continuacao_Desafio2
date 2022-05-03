@@ -18,6 +18,7 @@ function RepositoriosFav() {
 
     useEffect(() => {
         BuscarReposFav(usuario, setReposFav);
+        window.scroll(0, 0)
       }, []);
 
     return (
