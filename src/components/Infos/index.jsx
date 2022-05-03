@@ -1,22 +1,32 @@
 import { Avatar } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import Repositorio from "../Repositorio";
 import './style.css'
 
-function Infos({ dados }) {
+function Infos({ dados, repos }) {
+
   return (
     <div className="layout_detalhes">
-      <ul className="lista_detalhes">
-        <li><span>Usuário: </span>{dados.login}</li>
-        <li><span>Nome: </span>{dados.name}</li>
-        <li><span>id: </span>{dados.id}</li>
-        <li><span>Seguidores: </span>{dados.followers}</li>
-        <li><span>Seguindo: </span>{dados.following}</li>
-        <li><span>Bio: </span>{dados.bio}</li>
-        <li><span>link: </span>{dados.html_url}</li>
-      </ul>
+      <div className="lista_detalhes_box">
+        <ul className="lista_detalhes">
+          {/* <Repositorio repos={ Array.from(repos)} /> */}
+        </ul>
+      </div>
 
       <div className="imagem_detalhes_box">
-        <Avatar className="imagem_detalhes" alt="Avatar de usuário" src={dados.avatar_url} sx={{ width: 180, height: 180}} />
+        <div className="imagem_detalhes_card">
+          <Avatar className="imagem_detalhes" alt="Avatar de usuário" src={dados.avatar_url} sx={{ width: 230, height: 230}} />
+          <div className="box_name_login">
+            <span className="name">{dados.name}</span>
+            <span className="login">{dados.login}</span>
+          </div>
+          <div className="box_follow">
+            <div><span>{dados.followers} </span>Seguidores</div>
+            <div><span>{dados.following} </span>Seguindo</div>
+          </div>
+          <div><span>{dados.bio}</span></div>
+        </div>
+        <span className="id_user">{dados.id}</span>
       </div>
     </div>
   );

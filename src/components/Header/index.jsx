@@ -33,7 +33,7 @@ function HeaderPesquisa() {
     <>
       <nav>
         <Link to="/">
-          <h1>Desafio 2</h1>
+          <h1>Buscar</h1>
         </Link>
 
         <form
@@ -73,7 +73,7 @@ function HeaderPesquisa() {
           />
         </form>
 
-        <h1>React APIs</h1>
+        <h1>GIT API</h1>
       </nav>
       <div className="barrinha" />
     </>

@@ -3,27 +3,28 @@ import React, { useContext, useEffect, useState } from "react";
 import { Typography } from "@mui/material";
 import "./style.css";
 import { Link } from "react-router-dom";
-import { Buscar } from "../../API";
+import { Buscar, BuscarRepos } from "../../API";
 import { UsuarioContext } from "../../common/context/Usuario";
 import { DadosContext } from "../../common/context/Dados";
+import { ReposContext } from "../../common/context/Repos";
 import Infos from "../../components/Infos";
 
 function Detalhes() {
   const { usuario } = useContext(UsuarioContext);
   const { dados, setDados } = useContext(DadosContext);
+  const { repos, setRepos } = useContext(ReposContext);
+
 
   useEffect(() => {
     Buscar(usuario, setDados);
-    window.scrollTo(0, 0)
+    BuscarRepos(usuario, setRepos);
+    console.log('teste')
   }, []);
 
   return (
     <div className="bloco">
-      <Typography variant="h3" align="center" className="titulo">
-        Detalhes
-      </Typography>
 
-        <Infos dados={ dados } />
+        <Infos dados={ dados } repos={ repos }/>
 
       <div className="detalhes__container">
         <Link to="/repositorios-favoritos">

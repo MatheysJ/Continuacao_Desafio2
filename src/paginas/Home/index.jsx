@@ -18,17 +18,20 @@ function Home() {
   const { dados, setDados } = useContext(DadosContext);
 
   function DisplayInfo () {
-    if (dados !== "" && dados !== "Inválido"){
-      console.log(dados)
-      return(
-        <UserInfo />
-      );
-    } else {
+    console.log(dados)
+    if (dados === "Inválido"){
       return(
         <InvalidUser />
       );
+
+    } else if (dados === ""){
+      return(
+        <></>
+      );
     }
-    
+    return(
+      <UserInfo />
+    );    
   }
 
   return (
@@ -69,7 +72,7 @@ function Home() {
           />
         </div>
         
-        <DisplayInfo />
+        {<DisplayInfo />}
 
       </form>
       
