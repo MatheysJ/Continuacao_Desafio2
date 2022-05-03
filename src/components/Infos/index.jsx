@@ -1,6 +1,6 @@
 import { Avatar } from "@mui/material";
 import React, { useEffect } from "react";
-import Repositorio from "../RepsStarred";
+import RepsUser from "../RepsUser";
 import './style.css'
 
 function Infos({ dados, repos }) {
@@ -9,7 +9,8 @@ function Infos({ dados, repos }) {
     <div className="layout_detalhes">
       <div className="lista_detalhes_box">
         <ul className="lista_detalhes">
-          {/* <Repositorio repos={ Array.from(repos)} /> */}
+          <RepsUser repos={ Array.from(repos)} />
+
         </ul>
       </div>
 
