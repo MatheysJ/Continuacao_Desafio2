@@ -7,7 +7,7 @@ import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 /* import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"; */
 
-function Repositorio({ repos }) {
+function RepsStarred({ repos }) {
 
   if (repos.length !== 0) {
     return (
@@ -100,4 +100,4 @@ function Repositorio({ repos }) {
   }
 }
 
-export default Repositorio;
+export default RepsStarred;

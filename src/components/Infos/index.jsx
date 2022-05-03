@@ -1,6 +1,6 @@
 import { Avatar } from "@mui/material";
 import React, { useEffect } from "react";
-import Repositorio from "../Repositorio";
+import Repositorio from "../RepsStarred";
 import './style.css'
 
 function Infos({ dados, repos }) {

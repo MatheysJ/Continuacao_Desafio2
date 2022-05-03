@@ -5,7 +5,7 @@ import './style.css'
 import { ReposContext } from '../../common/context/Repos';
 import { UsuarioContext } from '../../common/context/Usuario';
 import { DadosContext } from "../../common/context/Dados";
-import Repositorio from '../../components/Repositorio';
+import RepsStarred from '../../components/RepsStarred';
 import { ReposFavContext } from '../../common/context/ReposFav';
 /* import { Link } from "react-router-dom"; */
 
@@ -26,7 +26,7 @@ function RepositoriosFav() {
             
             <Typography variant="h3" align="center" className="reps_fav__titulo">Repositórios Favoritos</Typography>
             
-            <Repositorio repos={ Array.from(reposFav) } />
+            <RepsStarred repos={ Array.from(reposFav) } />
 
         </div>
     );
