@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 /* import { Buscar } from '../../API'; */
 import { Typography } from "@mui/material";
 import "./style.css";

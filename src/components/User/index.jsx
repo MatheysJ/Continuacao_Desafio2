@@ -2,7 +2,7 @@ import { Avatar, Button } from '@mui/material';
 import React, { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import { DadosContext } from '../../common/context/Dados';
-import { UsuarioContext } from '../../common/context/Usuario';
+/* import { UsuarioContext } from '../../common/context/Usuario'; */
 import './style.css';
 
 export function UserInfo() {

@@ -1,5 +1,5 @@
 import { TextField, IconButton, InputAdornment } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./style.css";
 
 import "@fontsource/roboto/500.css";
@@ -15,7 +15,7 @@ import { ReposFavContext } from "../../common/context/ReposFav";
 
 function HeaderPesquisa() {
   const { usuario, setUsuario } = useContext(UsuarioContext);
-  const { reposFav, setReposFav } = useContext(ReposFavContext);
+  const { setReposFav } = useContext(ReposFavContext);
   const { setRepos } = useContext(ReposContext);
   const { setDados } = useContext(DadosContext);
 

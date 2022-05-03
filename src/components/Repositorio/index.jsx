@@ -26,6 +26,7 @@ function Repositorio({ repos }) {
                   className="item_repositorio"
                   href={`https://github.com/${repositorio.owner.login}/${repositorio.name}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <div className="lista_repositorio">
                     <div className="divisor_item_repositorio_start">
@@ -39,6 +40,7 @@ function Repositorio({ repos }) {
                         className="owner_repositorio"
                         href={`https://github.com/${repositorio.owner.login}`}
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         {repositorio.owner.login}
                       </a>
