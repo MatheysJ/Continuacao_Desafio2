@@ -1,4 +1,4 @@
-/* Caixa */
+/* Caixa de cada item de repositório*/
 
 .box_rep {
     border: 1px solid;
@@ -12,7 +12,7 @@
 
 .box_rep:hover {
     transition: 600ms;
-    transform: scale(1.06);
+    transform: scale(1.05);
 }
 
 /* Linhas */
@@ -58,4 +58,13 @@
 .stars  {
     display: flex;
     align-items: center;
+}
+
+/* Responsividade */
+
+@media only screen and (max-width: 450px){
+    .box_rep {
+        margin: 0 15px 0 15px;
+        /* background-color: aquamarine; */
+    }
 }

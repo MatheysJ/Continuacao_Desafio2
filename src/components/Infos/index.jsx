@@ -27,7 +27,7 @@ function Infos({ dados, repos }) {
             <div><span>{dados.followers} </span>Seguidores</div>
             <div><span>{dados.following} </span>Seguindo</div>
           </div>
-          <div><span>{dados.bio}</span></div>
+          <div className="box_bio"><span className="bio">{dados.bio}</span></div>
         </div>
         <span className="id_user">{dados.id}</span>
       </div>

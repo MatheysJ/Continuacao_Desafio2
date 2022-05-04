@@ -2,7 +2,6 @@
 
 .layout_detalhes {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
     margin: 0px 10px 20px 10px;
     width: 100%;
@@ -32,7 +31,6 @@
     align-items: center;
     flex-direction: column;
     padding: 25px 25px 0 25px ;
-    width: 285px;
     border-right: 1px solid;
     height: 500px;
 }
@@ -95,4 +93,65 @@
     font-weight: 500;
     color: rgb(117, 117, 117);
     margin-bottom: 1rem;
+}
+
+/* Tentativa de responsividade com css */
+
+
+/* Celular */
+/* [class*="imagem_detalhes_box"]{
+    background-color: aquamarine;
+    width: 100%;
+}
+
+[class*="layout_detalhes"] {
+    flex-direction: column-reverse;
+}
+ */
+@media only screen and (max-width: 739px) {
+    .imagem_detalhes_box{
+        /* background-color: aquamarine; */
+        width: 100%;
+        padding: 0 0 0 0;
+    }
+
+    .imagem_detalhes_card {
+        align-items: center;
+    }
+
+    .box_name_login {
+        align-items: center;
+    }
+
+    .box_follow {
+        justify-content: space-around;
+    }
+
+    .box_bio {
+        display: flex;
+        text-align: center;
+        margin: 0 30px 0 30px;
+    }
+
+    .layout_detalhes {
+        flex-direction: column-reverse;
+    }
+}
+
+
+/* Grande */
+@media only screen and (min-width: 740px) {
+    .imagem_detalhes_box {
+        width: 285px;
+        /* background-color: white; */
+    }
+    .lista_detalhes_box {
+        border: 1px solid;
+        margin: 0 0 0 0px;
+        width: auto;
+    }
+    .layout_detalhes{
+        flex-direction: row-reverse;
+    }
+    
 }
