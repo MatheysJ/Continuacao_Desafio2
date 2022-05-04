@@ -13,8 +13,8 @@
 
 .lista_detalhes_box {
     border: 1px solid;
-    margin: 26px 0 0 26px;
-    width: 100%;
+    margin: 0 0 0 0px;
+    width: auto;
 }
 
 .lista_detalhes {
@@ -25,15 +25,6 @@
     color: rgb(0, 0, 0);
 }
 
-.lista_detalhes_box li {
-    font-weight: 200;
-}
-
-.lista_detalhes_box li span {
-    font-weight: 500;
-    font-size: 1.3rem;
-}
-
 /* Estilização do card de imagem */
 
 .imagem_detalhes_box {
@@ -41,10 +32,20 @@
     align-items: center;
     flex-direction: column;
     padding: 25px 25px 0 25px ;
-    width: 20%;
+    width: 285px;
     border-right: 1px solid;
     height: 500px;
 }
+
+.box_avatar_redondo{
+    border-radius: 50%;
+    /* transition: 600ms; */
+}
+
+/* .box_avatar_redondo:hover{
+    transform: scale(1.02);
+    transition: 600ms;
+} */
 
 .imagem_detalhes_card {
     display: flex;

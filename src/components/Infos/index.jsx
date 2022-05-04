@@ -1,5 +1,5 @@
 import { Avatar } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import RepsUser from "../RepsUser";
 import './style.css'
 
@@ -14,12 +14,14 @@ function Infos({ dados, repos }) {
         </ul>
       </div>
 
-      <div className="imagem_detalhes_box">
+      <div className="imagem_detalhes_box" >
         <div className="imagem_detalhes_card">
-          <Avatar className="imagem_detalhes" alt="Avatar de usuário" src={dados.avatar_url} sx={{ width: 230, height: 230}} />
+          <a className="box_avatar_redondo" target="_blank" rel="noopener noreferrer" href={dados.html_url}>
+            <Avatar className="imagem_detalhes" alt="Avatar de usuário" src={dados.avatar_url} sx={{ width: 230, height: 230}} />
+          </a>
           <div className="box_name_login">
-            <span className="name">{dados.name}</span>
-            <span className="login">{dados.login}</span>
+            <a target="_blank" rel="noopener noreferrer" href={dados.html_url} className="name">{dados.name}</a >
+            <a target="_blank" rel="noopener noreferrer" href={dados.html_url} className="login">{dados.login}</a >
           </div>
           <div className="box_follow">
             <div><span>{dados.followers} </span>Seguidores</div>
