@@ -5,10 +5,11 @@ export const api = Axios.create({
 })
 
 export const Buscar = async(usuario, setDado) => {
+    const token = "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";
     await api
         .get(`https://api.github.com/users/${usuario}`, {
             headers: {
-                'Authorization' : `token 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`
+                'Authorization' : `token ${token}`
             }
         })
         .then(response => {
@@ -23,9 +24,10 @@ export const Buscar = async(usuario, setDado) => {
 }
 
 export const BuscarRepos = async(usuario, setDado) => {
+    const token = "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";
     await api.get(`https://api.github.com/users/${usuario}/repos`, {
         headers: {
-            'Authorization' : `token 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`
+            'Authorization' : `token ${token}`
         }
     })
     .then(response => {
@@ -41,9 +43,10 @@ export const BuscarRepos = async(usuario, setDado) => {
 }
 
 export const BuscarReposFav = async(usuario, setDado) => {
+    const token = "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";
     await api.get(`https://api.github.com/users/${usuario}/starred`, {
         headers: {
-            'Authorization' : `token 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`
+            'Authorization' : `token ${token}`
         }
     })
     .then(response => {
