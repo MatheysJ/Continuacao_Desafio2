@@ -1,0 +1,18 @@
+/* Links da NavBar */
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-right: auto;
+}
+
+.nav-links-item{
+    display: flex;
+    align-items: center;
+}
+
+.nav-links-item:not(:last-child)::after {
+    content: "|";
+    color: #FFF;
+}

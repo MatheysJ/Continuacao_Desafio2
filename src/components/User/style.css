@@ -17,6 +17,10 @@
 }
 
 /* Usuário válido */
+.box_avatar {
+    margin: 0;
+}
+
 .box_name_button{
     height: 100%;
     justify-content: space-between;
@@ -24,13 +28,13 @@
     flex-direction: column;
 }
 
-.box_name_button .button_box {
-    margin-top: 1em;
+.box_name_button .name_box {
     text-align: center;
 }
 
-.box_name_button .box_avatar {
-    margin: 0;
+.box_name_button .button_box {
+    margin-top: 1em;
+    text-align: center;
 }
 
 /* Responsividade */

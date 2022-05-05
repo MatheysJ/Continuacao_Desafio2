@@ -5,11 +5,9 @@ import "@fontsource/roboto/500.css";
 import { InvalidUser, UserInfo } from "../../components/User";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
-import { UsuarioContext } from "../../common/context/Usuario";
 import { DadosContext } from "../../common/context/Dados";
 
 function Home() {
-  const { usuario} = useContext(UsuarioContext);
   const { dados } = useContext(DadosContext);
 
   function DisplayInfo () {
@@ -36,7 +34,7 @@ function Home() {
       </Typography> */}
         <div className="container">
 
-          <SearchBar usuario={usuario} />
+          <SearchBar /* label="Pesquise um usuário" */ />
 
           <DisplayInfo />
           

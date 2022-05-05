@@ -20,7 +20,7 @@ export function UserInfo() {
         />
       </div>
       <div className="box_name_button">
-        <div>
+        <div className="name_box">
           <span>{dados.name}</span>
         </div>
         <div className="button_box">

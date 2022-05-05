@@ -5,6 +5,10 @@ import './style.css'
 
 function Infos({ dados, repos }) {
 
+  console.log(`Info foi chamada com os dados: dados: ${dados} e repos: ${repos}`);
+  console.log(dados)
+  console.log(repos)
+
   return (
     <div className="layout_detalhes">
       <div className="lista_detalhes_box">
