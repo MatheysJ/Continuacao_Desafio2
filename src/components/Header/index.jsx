@@ -16,9 +16,6 @@ export function HeaderLocation() {
 
 
 function HeaderPesquisa() {
-  /* Esse useEffect serve para que seja realizada uma busca quando o usuário digitar na barra de pesquisa do header e parar por 2
-  segundos, com isso, o useEffect executa a busca e define Dados e Repositórios sem a necessidade de clicar no botão */
-
   return (
     <>
       <nav>
@@ -26,11 +23,11 @@ function HeaderPesquisa() {
         <NavLinks />
 
         <div className="nav-search">
-          <SearchBar /* label="" *//>
+          <SearchBar />
         </div>
 
       </nav>
-      <div className="barrinha_nav" />
+      <div className="nav-gradient" />
     </>
   );
 }
@@ -39,9 +36,9 @@ function HeaderHome() {
   return (
     <>
       <nav>
-        <NavLinks /* label="Pesquise um usuário" */ />
+        <NavLinks />
       </nav>
-      <div className="barrinha_nav" />
+      <div className="nav-gradient" />
     </>
   );
 }

@@ -17,6 +17,7 @@ import { useLocation } from 'react-router-dom';
 /* function SearchFor(){
   const location = useLocation();
 
+  //Ignora isso aqui pfv que eu ainda não arrumei o monte de contextos ksksks
   const { usuario } = useContext(UsuarioContext);
   const { setDados } = useContext(DadosContext);
   const { setRepos } = useContext(ReposContext);
@@ -56,9 +57,7 @@ function SearchBar() {
 
     const location = useLocation();
 
-    /* const inputProps = {
-      label: "Pesquise um usuário",
-    }; */
+
 
     const { usuario, setUsuario } = useContext(UsuarioContext);
     const { setDados } = useContext(DadosContext);
