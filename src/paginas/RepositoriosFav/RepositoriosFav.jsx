@@ -17,7 +17,6 @@ function RepositoriosFav() {
     /* const { dados, setDados } = useContext(DadosContext); */
 
     useEffect(() => {
-        BuscarReposFav(usuario, setReposFav);
         window.scroll(0, 0)
       }, []);
 

@@ -1,9 +1,15 @@
-import { Avatar } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import { Avatar, Button } from "@mui/material";
 import RepsUser from "../RepsUser";
 import './style.css'
+import { DadosContext } from "../../common/context/Dados";
+import { ReposContext } from "../../common/context/Repos";
+import { Link } from "react-router-dom";
 
-function Infos({ dados, repos }) {
+function Infos() {
+
+  const { dados } = useContext(DadosContext);
+  const { repos } = useContext(ReposContext);
 
   console.log(`Info foi chamada com os dados: dados: ${dados} e repos: ${repos}`);
   console.log(dados)
@@ -14,7 +20,6 @@ function Infos({ dados, repos }) {
       <div className="lista_detalhes_box">
         <ul className="lista_detalhes">
           <RepsUser repos={ Array.from(repos)} />
-
         </ul>
       </div>
 
@@ -32,9 +37,19 @@ function Infos({ dados, repos }) {
             <div><span>{dados.following} </span>Seguindo</div>
           </div>
           <div className="box_bio"><span className="bio">{dados.bio}</span></div>
+          <div className="box_botao">
+            <Link to="/repositorios-favoritos">
+              <Button variant="outlined" color="inherit" size="large">
+                Repositórios favoritos
+              </Button>
+            </Link>
+          </div>
+          <div className="box_id">
+            <span className="id_user">{dados.id}</span>
+          </div>
         </div>
-        <span className="id_user">{dados.id}</span>
       </div>
+
     </div>
   );
 }

@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Typography } from "@mui/material";
+import React, { useContext, useEffect } from "react";
 import "./style.css";
 import "@fontsource/roboto/500.css";
 import { InvalidUser, UserInfo } from "../../components/User";
@@ -9,6 +8,10 @@ import { DadosContext } from "../../common/context/Dados";
 
 function Home() {
   const { dados } = useContext(DadosContext);
+
+  useEffect(() => {
+    window.scroll(0, 0)
+  }, []);
 
   function DisplayInfo () {
     console.log(dados)

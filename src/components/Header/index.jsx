@@ -30,7 +30,7 @@ function HeaderPesquisa() {
         </div>
 
       </nav>
-      <div className="barrinha" />
+      <div className="barrinha_nav" />
     </>
   );
 }

@@ -3,15 +3,14 @@
 .layout_detalhes {
     display: flex;
     justify-content: space-between;
-    margin: 0px 10px 20px 10px;
+    margin: 0px 10px 0px 10px;
     width: 100%;
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 /* Estilização da lista de informações */
 
 .lista_detalhes_box {
-    border: 1px solid;
     margin: 0 0 0 0px;
     width: auto;
 }
@@ -20,7 +19,7 @@
     margin: 0 0 0 0;
     padding: 0px;
     list-style-type: none;
-    border: 1px solid rgb(6, 2, 29); 
+    /* border: 1px solid rgb(6, 2, 29);  */
     color: rgb(0, 0, 0);
 }
 
@@ -31,8 +30,9 @@
     align-items: center;
     flex-direction: column;
     padding: 25px 25px 0 25px ;
-    border-right: 1px solid;
-    height: 500px;
+    /* border-right: 1px solid; */
+    height: auto;
+    background-color: rgb(185, 185, 185);
 }
 
 .box_avatar_redondo{
@@ -83,36 +83,41 @@
     font-weight: 700;
 }
 
+.box_bio {
+    /* text-align: center; */
+    margin: 0;
+}
+
+.box_botao {
+    margin: 1rem 0 1rem 0;
+}
+
 .imagem_detalhes {
-    border: 2px solid rgb(12, 2, 29); 
+    /* border: 2px solid rgb(12, 2, 29);  */
     display: block;
 }
 
+.box_id {
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .id_user {
-    margin-top: auto;
+    text-align: center;
     font-weight: 500;
     color: rgb(117, 117, 117);
-    margin-bottom: 1rem;
 }
 
-/* Tentativa de responsividade com css */
+/* Responsividade com css */
 
-
-/* Celular */
-/* [class*="imagem_detalhes_box"]{
-    background-color: aquamarine;
-    width: 100%;
-}
-
-[class*="layout_detalhes"] {
-    flex-direction: column-reverse;
-}
- */
+/* Pequeno */
 @media only screen and (max-width: 739px) {
     .imagem_detalhes_box{
         /* background-color: aquamarine; */
         width: 100%;
-        padding: 0 0 0 0;
+        padding: 2rem 0 0 0;
+        border: 0;
     }
 
     .imagem_detalhes_card {
@@ -146,7 +151,7 @@
         /* background-color: white; */
     }
     .lista_detalhes_box {
-        border: 1px solid;
+        /* border: 1px solid; */
         margin: 0 0 0 0px;
         width: auto;
     }
