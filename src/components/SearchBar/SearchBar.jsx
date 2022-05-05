@@ -14,45 +14,6 @@ import { ReposContext } from '../../common/context/Repos';
 import { ReposFavContext } from '../../common/context/ReposFav';
 import { useLocation } from 'react-router-dom';
 
-/* function SearchFor(){
-  const location = useLocation();
-
-  //Ignora isso aqui pfv que eu ainda não arrumei o monte de contextos ksksks
-  const { usuario } = useContext(UsuarioContext);
-  const { setDados } = useContext(DadosContext);
-  const { setRepos } = useContext(ReposContext);
-  const { setReposFav } = useContext(ReposFavContext);
-
-  if (location.pathname === "/"){
-    Buscar(usuario, setDados);
-    console.log(`Estamos na home`)
-  } else if (location.pathname === "/detalhes-usuario"){ 
-    Buscar(usuario, setDados);
-    BuscarRepos(usuario, setRepos);
-    console.log(`Detalhes`)
-  } else if (location.pathname === "/repositorios-favoritos"){
-    BuscarReposFav(usuario, setReposFav);
-    console.log(`Estamos na Repositorios favoritos`)
-  }
-} */
-
-/* export function ondeEstamos(){
-  if (location.pathname === "/"){
-    OqueBuscar(Buscar, usuario, setDados);
-    console.log(`Home`)
-  } else if (location.pathname === "/detalhes-usuario"){ 
-    OqueBuscar(BuscarRepos, usuario, setRepos);
-    console.log(`Detalhes`)
-  } else if (location.pathname === "/repositorios-favoritos"){
-    OqueBuscar(BuscarReposFav, usuario, setReposFav);
-    console.log(`Repositorios favoritos`)
-  }
-}
-
-export function OqueBuscar(aAPI, user, setOque) {
-  aAPI(user, setOque);
-} */
-
 function SearchBar() {
 
     const location = useLocation();
@@ -64,14 +25,14 @@ function SearchBar() {
     const { setRepos } = useContext(ReposContext);
     const { setReposFav } = useContext(ReposFavContext);
 
-    useEffect(() => {
+    /* useEffect(() => {
       const delay = setTimeout(() => {
-        Buscar(usuario, setDados);
-        BuscarRepos(usuario, setRepos);
-        BuscarReposFav(usuario, setReposFav);
+        location.pathname === "/" && Buscar(usuario, setDados)
+        location.pathname === "/detalhes-usuario" && BuscarRepos(usuario, setRepos)
+        location.pathname === "/repositorios-favoritos" && BuscarReposFav(usuario, setReposFav)
       }, 2000);
       return () => clearTimeout(delay);
-    }, [usuario]);  
+    }, [usuario]);   */
 
     return(
 
@@ -79,9 +40,9 @@ function SearchBar() {
         className="form"
         onSubmit={(event) => {
           event.preventDefault();
-          Buscar(usuario, setDados);
-          BuscarRepos(usuario, setRepos);
-          BuscarReposFav(usuario, setReposFav);
+          location.pathname === "/" && Buscar(usuario, setDados)
+          location.pathname === "/detalhes-usuario" && BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados)
+          location.pathname === "/repositorios-favoritos" && BuscarReposFav(usuario, setReposFav)
         }}
       >
 
@@ -101,11 +62,9 @@ function SearchBar() {
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton onClick={() => {
-                    Buscar(usuario, setDados);
-                    BuscarRepos(usuario, setRepos);
-                    BuscarReposFav(usuario, setReposFav);
-                    //Não posso chamar Hooks condicionalmente, então, por mais que não seja muito prático/eficiênte, esse foi o
-                    //jeito que eu achei de chamar a API com um componente de SearchBar sendo compartilhado entre as 3 páginas.
+                    location.pathname === "/" && Buscar(usuario, setDados)
+                    location.pathname === "/detalhes-usuario" && BuscarRepos(usuario, setRepos)
+                    location.pathname === "/repositorios-favoritos" && BuscarReposFav(usuario, setReposFav)
                     }}>
                     <SearchIcon />
                   </IconButton>

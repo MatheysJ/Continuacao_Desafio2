@@ -14,7 +14,6 @@ function Home() {
   }, []);
 
   function DisplayInfo () {
-    console.log(dados)
     if (dados === "Inválido"){
       return(
         <InvalidUser />

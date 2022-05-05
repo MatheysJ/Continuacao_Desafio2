@@ -13,7 +13,7 @@
     padding: 0px 0px;
 }
 
-.nav-links-item:not(:last-child)::after {
+.nav-links-item:not(:first-child)::before {
     content: "|";
     color: #FFF;
 }

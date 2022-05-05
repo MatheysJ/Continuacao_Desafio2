@@ -1,23 +1,19 @@
 import React, { useContext, useEffect } from 'react';
-import { Buscar, BuscarRepos, BuscarReposFav } from '../../API';
-import { Button, Typography } from '@mui/material';
-import './style.css'
-import { ReposContext } from '../../common/context/Repos';
-import { UsuarioContext } from '../../common/context/Usuario';
-import { DadosContext } from "../../common/context/Dados";
+import {Typography } from '@mui/material';
+import './style.css';
 import RepsStarred from '../../components/RepsStarred';
 import { ReposFavContext } from '../../common/context/ReposFav';
-/* import { Link } from "react-router-dom"; */
+import { UsuarioContext } from '../../common/context/Usuario';
+import { BuscarReposFav } from '../../API';
 
 function RepositoriosFav() {
 
-    /* const { repos, setRepos } = useContext(ReposContext); */
     const { reposFav, setReposFav } = useContext(ReposFavContext);
     const { usuario } = useContext(UsuarioContext);
-    /* const { dados, setDados } = useContext(DadosContext); */
 
     useEffect(() => {
         window.scroll(0, 0)
+        BuscarReposFav(usuario, setReposFav)
       }, []);
 
     return (
