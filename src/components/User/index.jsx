@@ -1,14 +1,20 @@
 import { Avatar, Button } from "@mui/material";
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { BuscarRepos } from "../../API";
 import { DadosContext } from "../../common/context/Dados";
+import { ReposContext } from "../../common/context/Repos";
+import { UsuarioContext } from "../../common/context/Usuario";
 /* import { UsuarioContext } from '../../common/context/Usuario'; */
 import "./style.css";
 
 export function UserInfo() {
-  const { dados } = useContext(DadosContext);
   const navigate = useNavigate();
-  console.log("UserInfo renderizado");
+
+  const { usuario } = useContext(UsuarioContext);
+  const { dados } = useContext(DadosContext);
+  const { setRepos } = useContext(ReposContext);
+
   return (
     <div className="display_info_user">
       <div className="box_avatar">
@@ -30,6 +36,7 @@ export function UserInfo() {
             color="primary"
             onClick={() => {
               navigate("/detalhes-usuario");
+              BuscarRepos(usuario, setRepos)
             }}
           >
             Pesquisar
@@ -41,7 +48,6 @@ export function UserInfo() {
 }
 
 export function InvalidUser() {
-  console.log("InvalidUser renderizado");
   return (
     <div className="display_info_user">
       <div className="box_avatar">
