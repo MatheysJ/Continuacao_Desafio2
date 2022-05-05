@@ -42,7 +42,10 @@ function SearchBar() {
           event.preventDefault();
           location.pathname === "/" && Buscar(usuario, setDados)
           location.pathname === "/detalhes-usuario" && BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados)
-          location.pathname === "/repositorios-favoritos" && BuscarReposFav(usuario, setReposFav)
+          location.pathname === "/repositorios-favoritos" && BuscarReposFav(usuario, setReposFav) && BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados)
+          /* Por causa de alguns bugs que podem acontecer se o usuário pesquisar um usuário diferente na ReposFav ou Repos, e 
+          acabar não atualizando as informações da páginas anteriores, quando for buscar um usuário nas 2 últimas páginas, a 
+          página também está buscando o conteúdo das páginas anteriores. */
         }}
       >
 

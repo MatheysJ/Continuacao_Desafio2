@@ -36,7 +36,7 @@ function Home() {
       </Typography> */}
         <div className="container">
 
-          <SearchBar /* label="Pesquise um usuário" */ />
+          <SearchBar />
 
           <DisplayInfo />
           

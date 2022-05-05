@@ -16,13 +16,6 @@ function Infos() {
   const { repos, setRepos } = useContext(ReposContext);
   const { setReposFav } = useContext(ReposFavContext);
 
-  //Esse useEffect serve pra "consertar" um bug da página de Detalhes, em que o BuscarRepos é chamado pela barra de pesquisa, 
-  //o usuário muda e os repositórios também, mas os dados continuam como o do usuário antigo.
-  useEffect(() => {
-    Buscar(usuario, setDados)
-    BuscarRepos(usuario, setRepos)
-  }, [])
-
   return (
     <div className="layout_detalhes">
 

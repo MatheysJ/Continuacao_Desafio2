@@ -5,7 +5,6 @@ import { BuscarRepos } from "../../API";
 import { DadosContext } from "../../common/context/Dados";
 import { ReposContext } from "../../common/context/Repos";
 import { UsuarioContext } from "../../common/context/Usuario";
-/* import { UsuarioContext } from '../../common/context/Usuario'; */
 import "./style.css";
 
 export function UserInfo() {

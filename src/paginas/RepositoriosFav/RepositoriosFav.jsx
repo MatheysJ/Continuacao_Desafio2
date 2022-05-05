@@ -3,18 +3,10 @@ import {Typography } from '@mui/material';
 import './style.css';
 import RepsStarred from '../../components/RepsStarred';
 import { ReposFavContext } from '../../common/context/ReposFav';
-import { UsuarioContext } from '../../common/context/Usuario';
-import { BuscarReposFav } from '../../API';
 
 function RepositoriosFav() {
 
-    const { reposFav, setReposFav } = useContext(ReposFavContext);
-    const { usuario } = useContext(UsuarioContext);
-
-    useEffect(() => {
-        window.scroll(0, 0)
-        BuscarReposFav(usuario, setReposFav)
-      }, []);
+    const { reposFav } = useContext(ReposFavContext);
 
     return (
         <div className='reps_fav__bloco'>

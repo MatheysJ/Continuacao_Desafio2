@@ -30,6 +30,9 @@
 
 .box_name_button .name_box {
     text-align: center;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: large;
 }
 
 .box_name_button .button_box {
