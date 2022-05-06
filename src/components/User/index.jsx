@@ -48,12 +48,6 @@ export function InvalidUser() {
   return (
     <div className="display_info_user">
       <div className="box_avatar">
-        {/* <Avatar
-          className="imagem_detalhes"
-          alt="Avatar de usuário"
-          src="https://spng.pngfind.com/pngs/s/165-1651991_shrug-emoticons-hd-png-download.png"
-          sx={{ width: 180, height: 180 }}
-        /> */}
         <QuestionMarkIcon 
         className="imagem_detalhes not_found"
         alt="Nenhum usuário com esse login foi encontrado"

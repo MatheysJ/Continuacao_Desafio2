@@ -36,7 +36,6 @@ function Infos() {
           </div>
           <div className="box_bio"><span className="bio">{dados.bio}</span></div>
           <div className="box_botao">
-            {/* Tá dando erro por ter um Button dentro de um Link, aparentemente. */}
               <Button variant="outlined" color="inherit" size="large" onClick={() => {
                 BuscarReposFav(usuario, setReposFav);
                 navigate("/repositorios-favoritos")

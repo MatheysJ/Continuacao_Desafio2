@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './style.css';
 import RepsStarred from '../../components/RepsStarred';
-import { ReposFavContext } from '../../common/context/ReposFav';
 
 function RepositoriosFav() {
 

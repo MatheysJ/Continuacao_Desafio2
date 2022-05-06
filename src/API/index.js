@@ -5,12 +5,8 @@ export const api = Axios.create({
 })
 
 export const Buscar = async(usuario, setDado) => {
-    const token = "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";
     await api
         .get(`https://api.github.com/users/${usuario}`, {
-            headers: {
-                'Authorization' : `token ${token}`
-            }
         })
         .then(response => {
             setDado(response.data)
@@ -24,11 +20,7 @@ export const Buscar = async(usuario, setDado) => {
 }
 
 export const BuscarRepos = async(usuario, setDado) => {
-    const token = "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";
     await api.get(`https://api.github.com/users/${usuario}/repos`, {
-        headers: {
-            'Authorization' : `token ${token}`
-        }
     })
     .then(response => {
         setDado(response.data)
@@ -42,11 +34,7 @@ export const BuscarRepos = async(usuario, setDado) => {
 }
 
 export const BuscarReposFav = async(usuario, setDado) => {
-    const token = "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";
     await api.get(`https://api.github.com/users/${usuario}/starred`, {
-        headers: {
-            'Authorization' : `token ${token}`
-        }
     })
     .then(response => {
         setDado(response.data)
@@ -58,6 +46,3 @@ export const BuscarReposFav = async(usuario, setDado) => {
         console.log(`Esse é para ser o código de erro: ${err.response.status}`)
     })
 }
-
-//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
-//Token, ele só vai funcionar por 90 dias, a partir do dia 01/05/2022
