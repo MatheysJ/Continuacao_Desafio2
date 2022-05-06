@@ -40,6 +40,12 @@
     text-align: center;
 }
 
+.not_found {
+    filter: invert(1);
+    background-color: rgb(163, 163, 163);
+    border-radius: 50%;
+}
+
 /* Responsividade */
 @media only screen and (max-width: 700px) {
     .display_info_user {

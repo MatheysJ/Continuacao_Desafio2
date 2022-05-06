@@ -5,6 +5,8 @@ import { BuscarRepos } from "../../API";
 import { DadosContext } from "../../common/context/Dados";
 import { ReposContext } from "../../common/context/Repos";
 import { UsuarioContext } from "../../common/context/Usuario";
+
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import "./style.css";
 
 export function UserInfo() {
@@ -50,15 +52,22 @@ export function InvalidUser() {
   return (
     <div className="display_info_user">
       <div className="box_avatar">
-        <Avatar
+        {/* <Avatar
           className="imagem_detalhes"
           alt="Avatar de usuário"
           src="https://spng.pngfind.com/pngs/s/165-1651991_shrug-emoticons-hd-png-download.png"
           sx={{ width: 180, height: 180 }}
+        /> */}
+        <QuestionMarkIcon 
+        className="imagem_detalhes not_found"
+        alt="Nenhum usuário com esse login foi encontrado"
+        sx={{ width: 180, height: 180 }}
         />
       </div>
-      <div>
-        <span>O usuário não foi encontrado</span>
+      <div className="box_name_button">
+        <div className="name_box">
+          <span>O usuário não foi encontrado</span>
+        </div>
       </div>
     </div>
   );
