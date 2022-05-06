@@ -1,7 +1,6 @@
 import { Avatar, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import "./style.css";
-import { ReposFavContext } from '../../common/context/ReposFav';
 import { DadosContext } from '../../common/context/Dados';
 
 /* import Star from "@mui/icons-material/Star"; */
@@ -12,8 +11,7 @@ import { Link } from "react-router-dom";
 
 function RepsStarred() {
 
-  const { reposFav } = useContext(ReposFavContext);
-  const { dados } = useContext(DadosContext);
+  const { dados, reposFav } = useContext(DadosContext);
 
   if (reposFav.length !== 0) {
     return (

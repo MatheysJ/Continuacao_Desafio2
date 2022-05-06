@@ -3,18 +3,12 @@ import { Avatar, Button } from "@mui/material";
 import RepsUser from "../RepsUser";
 import './style.css'
 import { BuscarReposFav } from '../../API';
-import { UsuarioContext } from "../../common/context/Usuario";
 import { DadosContext } from "../../common/context/Dados";
-import { ReposContext } from "../../common/context/Repos";
-import { ReposFavContext } from '../../common/context/ReposFav';
 import { useNavigate } from "react-router-dom";
 
 function Infos() {
 
-  const { usuario } = useContext(UsuarioContext)
-  const { dados } = useContext(DadosContext);
-  const { repos } = useContext(ReposContext);
-  const { setReposFav } = useContext(ReposFavContext);
+  const { dados, usuario, repos, setReposFav } = useContext(DadosContext);
 
   const navigate = useNavigate();
 

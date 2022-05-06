@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+/* import { createContext, useState } from "react";
 
 export const ReposContext = createContext();
 ReposContext.displayName = "Repositórios";
@@ -11,4 +11,4 @@ export const ReposProvider = ({ children }) => {
             { children }
         </ReposContext.Provider>
     )
-}
+} */

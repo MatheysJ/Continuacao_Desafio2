@@ -3,8 +3,6 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BuscarRepos } from "../../API";
 import { DadosContext } from "../../common/context/Dados";
-import { ReposContext } from "../../common/context/Repos";
-import { UsuarioContext } from "../../common/context/Usuario";
 
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import "./style.css";
@@ -12,9 +10,7 @@ import "./style.css";
 export function UserInfo() {
   const navigate = useNavigate();
 
-  const { usuario } = useContext(UsuarioContext);
-  const { dados } = useContext(DadosContext);
-  const { setRepos } = useContext(ReposContext);
+  const { dados, usuario, setRepos } = useContext(DadosContext);
 
   return (
     <div className="display_info_user">

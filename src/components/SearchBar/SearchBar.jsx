@@ -8,20 +8,14 @@ import {
 import { Buscar, BuscarRepos, BuscarReposFav } from "../../API";
 import './style.css';
 
-import { UsuarioContext } from "../../common/context/Usuario";
 import { DadosContext } from "../../common/context/Dados";
-import { ReposContext } from '../../common/context/Repos';
-import { ReposFavContext } from '../../common/context/ReposFav';
 import { useLocation } from 'react-router-dom';
 
 function SearchBar() {
 
     const location = useLocation();
 
-    const { usuario, setUsuario } = useContext(UsuarioContext);
-    const { setDados } = useContext(DadosContext);
-    const { setRepos } = useContext(ReposContext);
-    const { setReposFav } = useContext(ReposFavContext);
+    const { setDados, usuario, setUsuario, setRepos, setReposFav } = useContext(DadosContext);
 
     const searchRegex = new RegExp(/[ `!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?~]/);
 

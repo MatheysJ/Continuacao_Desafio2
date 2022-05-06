@@ -4,10 +4,13 @@ export const DadosContext = createContext();
 DadosContext.displayName = "Dados";
 
 export const DadosProvider = ({ children }) => {
-    const [dados, setDados] = useState("");
+    const [ dados, setDados ] = useState("");
+    const [ repos, setRepos ] = useState("");
+    const [ reposFav, setReposFav ] = useState("");
+    const [ usuario, setUsuario ] = useState("");
 
     return (
-        <DadosContext.Provider value={{ dados, setDados }}>
+        <DadosContext.Provider value={{ dados, setDados, repos, setRepos, reposFav, setReposFav, usuario, setUsuario }}>
             { children }
         </DadosContext.Provider>
     )
