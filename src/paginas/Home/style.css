@@ -2,8 +2,9 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    height: 1000px;
+    height: 900px;
     background-color: rgb(238, 238, 238);
+    box-shadow: 0px 0 20px rgb(12, 2, 29) ;
 }
 
 .titulo {
@@ -16,6 +17,29 @@
     flex-direction: row;
     /* border: 1px solid red; */
     justify-content: center;
+}
+
+.info-site {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5rem 2rem 2rem 2rem;
+}
+
+.icon-git {
+    border: 50%;
+}
+
+.box_texto-git {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.texto-git {
+    font-weight: 500;
 }
 
 /* Responsividade */
@@ -39,5 +63,18 @@
 @media only screen and (max-width: 440px) {
     .main{
         width: 100%;
+    }
+    .info-site {
+        flex-direction: column;
+    }
+    .texto-git {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 544px) and (min-width: 440px) {
+    .texto-git {
+        font-weight: 500;
+        font-size: 1.1rem;
     }
 }

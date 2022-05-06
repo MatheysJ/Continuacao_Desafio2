@@ -19,6 +19,9 @@
 /* Usuário válido */
 .box_avatar {
     margin: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(12, 2, 29);
+
 }
 
 .box_name_button{

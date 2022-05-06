@@ -27,7 +27,7 @@ function HeaderPesquisa() {
         </div>
 
       </nav>
-      <div className="nav-gradient" />
+      {/* <div className="nav-gradient" /> */}
     </>
   );
 }
@@ -38,7 +38,7 @@ function HeaderHome() {
       <nav>
         <NavLinks />
       </nav>
-      <div className="nav-gradient" />
+      {/* <div className="nav-gradient" /> */}
     </>
   );
 }
