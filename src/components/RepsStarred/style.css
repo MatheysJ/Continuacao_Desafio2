@@ -1,13 +1,33 @@
-.reps_fav__container{
+.reps-fav_titulo {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    width: 80%;
-    height: 100px;
-    margin: 10px 0 10px;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0 20px 0;
 }
 
+.reps-fav_indicador {
+    display: flex;
+    padding: 0 25px 0 25px;
+    background-color: rgb(12, 2, 29);
+    color: white;
+    align-items: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.reps-fav_usuario {
+    display: flex;
+    padding: 0 25px 0 25px;
+    background-color: rgb(12, 2, 29);
+    color: white;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.reps-fav_usuario-nome {
+    padding-right: 1rem;
+}
 
 .bloco_repositorio {
     width: 100%;
@@ -112,6 +132,22 @@
     align-items: center;
 }
 
+@media only screen and (max-width: 500px) {
+    .reps-fav_titulo {
+        display: flex;
+        flex-direction: column;
+    }
+    .reps-fav_indicador {
+        margin-bottom: 2rem;
+        margin-right: auto;
+    }
+    .reps-fav_usuario {
+        margin-left: auto;
+    }
+}
+
+/* Nenhum repositório favorito */ 
+
 .star_repositorio {
     display: flex;
     align-items: center;
@@ -122,13 +158,23 @@
     display: flex;
     justify-content: center;
     width: 80%;
-    height: 300px;
-    margin: 10px 0 10px;
+    margin: 30px 0 100px;
     flex-direction: column;
 }
 
+.nenhum_fav-titulo {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.nenhum_fav-star {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
 .empty_star {
-    margin-top: 20px;
+    margin-top: 50px;
     align-self: center;
 }
 

@@ -5,6 +5,7 @@
     justify-content: space-between;
     margin: 0px 10px 0px 10px;
     width: 100%;
+    min-height: 800px;
     /* border: 1px solid; */
 }
 
@@ -151,7 +152,7 @@
     }
     .lista_detalhes_box {
         /* border: 1px solid; */
-        margin: 0 0 0 0px;
+        margin: 10px 0 0 0px;
         width: auto;
     }
     .layout_detalhes{

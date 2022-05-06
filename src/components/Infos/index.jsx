@@ -1,20 +1,22 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Avatar, Button } from "@mui/material";
 import RepsUser from "../RepsUser";
 import './style.css'
-import { Buscar, BuscarRepos, BuscarReposFav } from '../../API';
+import { BuscarReposFav } from '../../API';
 import { UsuarioContext } from "../../common/context/Usuario";
 import { DadosContext } from "../../common/context/Dados";
 import { ReposContext } from "../../common/context/Repos";
 import { ReposFavContext } from '../../common/context/ReposFav';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Infos() {
 
   const { usuario } = useContext(UsuarioContext)
-  const { dados, setDados } = useContext(DadosContext);
-  const { repos, setRepos } = useContext(ReposContext);
+  const { dados } = useContext(DadosContext);
+  const { repos } = useContext(ReposContext);
   const { setReposFav } = useContext(ReposFavContext);
+
+  const navigate = useNavigate();
 
   return (
     <div className="layout_detalhes">
@@ -41,13 +43,12 @@ function Infos() {
           <div className="box_bio"><span className="bio">{dados.bio}</span></div>
           <div className="box_botao">
             {/* Tá dando erro por ter um Button dentro de um Link, aparentemente. */}
-            <Link to="/repositorios-favoritos">
               <Button variant="outlined" color="inherit" size="large" onClick={() => {
                 BuscarReposFav(usuario, setReposFav);
+                navigate("/repositorios-favoritos")
               }}>
                 Repositórios favoritos
               </Button>
-            </Link>
           </div>
           <div className="box_id">
             <span className="id_user">{dados.id}</span>

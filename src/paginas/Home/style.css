@@ -2,7 +2,7 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    height: 900px;
+    height: auto;
     background-color: rgb(238, 238, 238);
     box-shadow: 0px 0 20px rgb(12, 2, 29) ;
 }
@@ -12,7 +12,7 @@
 }
 
 .container {
-    padding: 30px 15px 0 15px;
+    padding: 90px 15px 10px 15px;
     display: flex;
     flex-direction: row;
     /* border: 1px solid red; */
@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 5rem 2rem 2rem 2rem;
+    padding: 5rem 2rem 150px 2rem;
 }
 
 .icon-git {

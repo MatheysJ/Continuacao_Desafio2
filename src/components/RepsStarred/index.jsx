@@ -1,25 +1,40 @@
 import { Avatar, Typography } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import "./style.css";
+import { ReposFavContext } from '../../common/context/ReposFav';
+import { DadosContext } from '../../common/context/Dados';
 
 /* import Star from "@mui/icons-material/Star"; */
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
+import { Link } from "react-router-dom";
 /* import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"; */
 
-function RepsStarred({ repos }) {
+function RepsStarred() {
 
-  if (repos.length !== 0) {
+  const { reposFav } = useContext(ReposFavContext);
+  const { dados } = useContext(DadosContext);
+
+  if (reposFav.length !== 0) {
     return (
       <>
-        <div className="reps_fav__container">
-          <Typography variant="h5" align="center">
-            Estes são os repositórios favoritos do usuário
-          </Typography>
+        <div className="reps-fav_titulo">
+          <div className="reps-fav_indicador">
+            <h3>Repositórios favoritos</h3>
+          </div>
+          <Link to={"/detalhes-usuario"} className="reps-fav_usuario">
+            <h3 className="reps-fav_usuario-nome">{dados.name}</h3>
+            <Avatar
+              className="reps-fav_usuario-avatar"
+              alt="Avatar de usuário"
+              src={dados.avatar_url}
+              sx={{ width: 50, height: 50 }}
+            />
+          </Link>
         </div>
 
         <ul className="bloco_repositorio">
-          {repos.map((repositorio) => {
+          {reposFav.map((repositorio) => {
             return (
               <li className="li_repositorio" key={repositorio.id}>
                 <a
@@ -36,14 +51,11 @@ function RepsStarred({ repos }) {
                     </div>
 
                     <div className="divisor_item_repositorio_center">
-                      <a
+                      <div
                         className="owner_repositorio"
-                        href={`https://github.com/${repositorio.owner.login}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
                       >
                         {repositorio.owner.login}
-                      </a>
+                      </div>
                     </div>
 
                     <div className="divisor_item_repositorio_end">
@@ -86,15 +98,17 @@ function RepsStarred({ repos }) {
   } else {
     return (
       <div className="nenhum_fav">
-        <Typography variant="h5" align="center">
-          O usuário informado não possui nenhum repositório favorito
-        </Typography>
-        <StarBorderOutlinedIcon
-          className="empty_star"
-          fontSize="small"
-          color="disabled"
-          sx={{ width: 250, height: 250 }}
-        />
+        <div className="nenhum_fav-titulo">          
+          <h2>O usuário informado não possui nenhum repositório favorito</h2>
+        </div>
+        <div className="nenhum_fav-star">          
+          <StarBorderOutlinedIcon
+            className="empty_star"
+            fontSize="small"
+            color="disabled"
+            sx={{ width: 250, height: 250 }}
+          />
+        </div>
       </div>
     );
   }

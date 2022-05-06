@@ -1,6 +1,6 @@
 import { Avatar, Button } from "@mui/material";
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BuscarRepos } from "../../API";
 import { DadosContext } from "../../common/context/Dados";
 import { ReposContext } from "../../common/context/Repos";
