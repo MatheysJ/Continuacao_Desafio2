@@ -49,7 +49,7 @@ export function InvalidUser() {
     <div className="display_info_user">
       <div className="box_avatar">
         <QuestionMarkIcon 
-        className="imagem_detalhes not_found"
+        className="not_found"
         alt="Nenhum usuário com esse login foi encontrado"
         sx={{ width: 180, height: 180 }}
         />
