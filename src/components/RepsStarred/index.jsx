@@ -3,11 +3,9 @@ import React, { useContext } from "react";
 import "./style.css";
 import { DadosContext } from '../../common/context/Dados';
 
-/* import Star from "@mui/icons-material/Star"; */
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import { Link } from "react-router-dom";
-/* import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"; */
 
 function RepsStarred() {
 
@@ -72,12 +70,6 @@ function RepsStarred() {
                     <div className="divisor_item_repositorio_start">
                       <span>{repositorio.language}</span>
                     </div>
-
-                    {/* <div className="divisor_item_repositorio_center down_arrow">
-                      <span>
-                        <KeyboardArrowDownIcon />
-                      </span>
-                    </div> */}
 
                     <div className="divisor_item_repositorio_end">
                       <span className="star_repositorio">

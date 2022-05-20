@@ -1,10 +1,10 @@
 import { HeaderLocation } from "./components/Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./paginas/Home/index";
-import RepositoriosFav from "./paginas/RepositoriosFav/RepositoriosFav";
-import Detalhes from "./paginas/Detalhes/Detalhes";
+import RepositoriosFav from "./paginas/RepositoriosFav";
+import Detalhes from "./paginas/Detalhes";
 import Footer from "./components/Footer";
-import Pagina404 from "./paginas/404/Pagina404";
+import Pagina404 from "./paginas/404";
 
 function App() {
   return (

@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Buscar } from "../../../API";
+import { DadosContext } from "../../../common/context/Dados";
 import './style.css'
 
 function NavLink_Home(){
+
+  const { usuario, dados, setDados } = useContext(DadosContext);
+
   return (
     <div className="nav-links-item fixo">
-      <Link to="/"><h1>Home</h1></Link>
+      <Link to="/" onClick={() => {
+        usuario !== dados.login && Buscar(usuario, setDados);
+      }}
+    ><h1>Home</h1></Link>
     </div>
   );
 }
 
 function NavLink_Detalhes(){
+
+  const { usuario, dados, setDados } = useContext(DadosContext);
+  
   return(
     <div className="nav-links-item drop">
-      <Link to="/detalhes-usuario"><h1>Detalhes</h1></Link>
+      <Link to="/detalhes-usuario" onClick={()=>{
+        usuario !== dados.login && Buscar(usuario, setDados);
+      }}><h1>Detalhes</h1></Link>
     </div>
   );
 }

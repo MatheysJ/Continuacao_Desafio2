@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Avatar, Button } from "@mui/material";
 import RepsUser from "../RepsUser";
 import './style.css'
-import { BuscarReposFav } from '../../API';
+import { BuscarPages, BuscarReposFav } from '../../API';
 import { DadosContext } from "../../common/context/Dados";
 import { useNavigate } from "react-router-dom";
+import Paginas from "../Paginas";
 
 function Infos() {
 
-  const { dados, usuario, repos, setReposFav } = useContext(DadosContext);
+  const { dados, usuario, repos, setReposFav, setRepos, loading = true } = useContext(DadosContext);
 
   const navigate = useNavigate();
 
@@ -17,7 +18,10 @@ function Infos() {
 
       <div className="lista_detalhes_box">
         <ul className="lista_detalhes">
-          <RepsUser repos={ Array.from(repos)} />
+          {console.log(loading)}
+          {!loading ? <RepsUser repos={ Array.from(repos)} /> : <h1>Está carregando</h1>}
+          {!loading ? <Paginas /> : <h1>...</h1>}
+
         </ul>
       </div>
 

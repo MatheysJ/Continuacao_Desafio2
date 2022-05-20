@@ -42,6 +42,7 @@
 .box_name_button .button_box {
     margin-top: 1em;
     text-align: center;
+    filter: invert(0);
 }
 
 .not_found {
@@ -49,6 +50,33 @@
     background-color: rgb(163, 163, 163);
     border-radius: 50%;
 }
+
+/* Carregando usuário */
+.pesquisando-user {
+    width: 180px;
+    height: 180px;
+}
+
+.name_box-carregando{
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: large;
+    background-color: rgb(194, 194, 194);
+    border-radius: 15px;
+    height: 1.36em;
+}
+
+.button-carregando{
+    width: 108.17px;
+    height: 34.5px;
+    border: 1px solid currentColor;
+    color: inherit;
+    border-radius: 4px;
+    background-color: rgb(221, 221, 221);
+}
+
+
 
 /* Responsividade */
 @media only screen and (max-width: 700px) {

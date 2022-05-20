@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
     IconButton,
     InputAdornment,
@@ -15,9 +15,9 @@ function SearchBar() {
 
     const location = useLocation();
 
-    const { setDados, usuario, setUsuario, setRepos, setReposFav } = useContext(DadosContext);
+    const { setDados, usuario, setUsuario, setRepos, setReposFav, setLoading } = useContext(DadosContext);
 
-    const searchRegex = new RegExp(/[ `!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?~]/);
+    const searchRegex = new RegExp(/[ `!@#$%^&*()+\=\[\]{};':"\\|,.<>\/?~]/);
 
     return(
 
@@ -25,17 +25,13 @@ function SearchBar() {
         className="form"
         onSubmit={(event) => {
           event.preventDefault();
-          /* (!searchRegex.test(usuario)) && (location.pathname === "/" && Buscar(usuario, setDados))
-          (!searchRegex.test(usuario)) && (location.pathname === "/detalhes-usuario" && BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados))
-          (!searchRegex.test(usuario)) && (location.pathname === "/repositorios-favoritos" && BuscarReposFav(usuario, setReposFav) && BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados)) */
-
           (!searchRegex.test(usuario)) &&
             (location.pathname === "/") ? 
-              Buscar(usuario, setDados) :
+              Buscar(usuario, setDados, setLoading) :
             (location.pathname === "/detalhes-usuario") ?
              BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados) :
             (location.pathname === "/repositorios-favoritos") &&
-             BuscarReposFav(usuario, setReposFav) && BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados)                        
+             BuscarReposFav(usuario, setReposFav)
 
         }}
       >
@@ -55,18 +51,14 @@ function SearchBar() {
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <IconButton onClick={() => {
-                    /* (!searchRegex.test(usuario) && (location.pathname === "/")) && Buscar(usuario, setDados)
-                    (!searchRegex.test(usuario) && (location.pathname === "/detalhes-usuario")) && BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados)
-                    (!searchRegex.test(usuario) && (location.pathname === "/repositorios-favoritos")) && BuscarReposFav(usuario, setReposFav) && BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados) */
-                    
+                  <IconButton onClick={() => {                    
                     (!searchRegex.test(usuario)) &&
                       (location.pathname === "/") ? 
-                        Buscar(usuario, setDados) :
+                        Buscar(usuario, setDados, setLoading) :
                       (location.pathname === "/detalhes-usuario") ?
-                      BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados) :
+                      BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados, setLoading) :
                       (location.pathname === "/repositorios-favoritos") &&
-                      BuscarReposFav(usuario, setReposFav) && BuscarRepos(usuario, setRepos) && Buscar(usuario, setDados) 
+                      BuscarReposFav(usuario, setReposFav)
 
                   }}>
                     <SearchIcon />

@@ -1,0 +1,15 @@
+.pagina-atual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.anterior-proximo{
+    margin-bottom: 1rem;
+}
+
+.button-pagina-atual {
+    padding: 0.5rem;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 40%;
+}

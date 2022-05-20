@@ -8,7 +8,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { DadosContext } from "../../common/context/Dados";
 
 function Home() {
-  const { dados } = useContext(DadosContext);
+  const { dados, loading } = useContext(DadosContext);
 
   useEffect(() => {
     window.scroll(0, 0)
@@ -28,6 +28,7 @@ function Home() {
     return(
       <UserInfo />
     );    
+
   }
 
   return (

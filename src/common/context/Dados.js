@@ -8,9 +8,10 @@ export const DadosProvider = ({ children }) => {
     const [ repos, setRepos ] = useState("");
     const [ reposFav, setReposFav ] = useState("");
     const [ usuario, setUsuario ] = useState("");
+    const [ loading, setLoading ] = useState(true);
 
     return (
-        <DadosContext.Provider value={{ dados, setDados, repos, setRepos, reposFav, setReposFav, usuario, setUsuario }}>
+        <DadosContext.Provider value={{ dados, setDados, repos, setRepos, reposFav, setReposFav, usuario, setUsuario, loading, setLoading}}>
             { children }
         </DadosContext.Provider>
     )
